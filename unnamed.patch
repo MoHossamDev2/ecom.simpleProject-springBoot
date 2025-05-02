@@ -1,0 +1,15 @@
+Index: src/main/java/com/telusko/ecom/proj/controller/ProductController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/telusko/ecom/proj/controller/ProductController.java b/src/main/java/com/telusko/ecom/proj/controller/ProductController.java
+--- a/src/main/java/com/telusko/ecom/proj/controller/ProductController.java	
++++ b/src/main/java/com/telusko/ecom/proj/controller/ProductController.java	
+@@ -44,4 +44,6 @@
+       byte[] imageFile = product.getImageDate();
+       return ResponseEntity.ok().contentType(MediaType.valueOf(product.getImageType())).body(imageFile);
+    }
++   @PutMapping("/product/{id}")
++   public ResponseEntity<String>updateProduct(@PathVariable int id, @RequestPart Product product,@RequestPart MultipartFile imageFile) {}
+ }
